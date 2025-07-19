@@ -20,7 +20,7 @@ resource "aws_ecs_task_definition" "test_1" {
   container_definitions    = <<TASK_DEFINITION
     [
     {
-        "name": "test-container1",
+        "name": "mega-hackathon-container1",
         "image": "${var.ecr_repo_url[0]}:latest",
         "cpu": 128,
         "memory": 128,
@@ -61,7 +61,7 @@ resource "aws_ecs_task_definition" "test_2" {
   container_definitions    = <<TASK_DEFINITION
     [
     {
-        "name": "test-container2",
+        "name": "mega-hackathon-container2",
         "image": "${var.ecr_repo_url[1]}:latest",
         "cpu": 128,
         "memory": 128,
