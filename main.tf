@@ -32,3 +32,16 @@ module "security_group" {
   vpc_id = module.vpc.vpc_id
 }
 
+
+module "cloudwatch" {
+  source = "./modules/cloudwatch"
+  name   = var.name
+}
+
+module "alb" {
+  source = "./modules/alb"
+  name                 = var.name
+  vpc_id               = module.vpc.vpc_id
+  subnets              = module.vpc.public_subnets
+  security_group_id    = module.security_group.alb_security_group_id
+}
