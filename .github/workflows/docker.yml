@@ -26,7 +26,7 @@ jobs:
 
       - name: Build Docker Image for Service1
         run: |
-          docker build -t ${{ vars.ECR_REGISTRY }}/tmega-hackathon-repo-1:${{ github.sha }} ./docker/appointments
+          docker build -t ${{ vars.ECR_REGISTRY }}/mega-hackathon-repo-1:${{ github.sha }} ./docker/appointments
           docker tag ${{ vars.ECR_REGISTRY }}/mega-hackathon-repo-1:${{ github.sha }} ${{ vars.ECR_REGISTRY }}/mega-hackathon-repo-1:latest
 
       - name: Push Docker Image for Service1
