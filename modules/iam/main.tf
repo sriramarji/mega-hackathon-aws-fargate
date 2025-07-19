@@ -48,5 +48,5 @@ resource "aws_iam_role_policy_attachment" "ecs_execution_role_policy" {
 }
 
 output "ecs_role_arn" {
-    value = aws_iam_role.ecs_execution_role.arn
+  value = aws_iam_role.ecs_execution_role.arn
 }

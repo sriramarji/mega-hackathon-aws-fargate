@@ -3,7 +3,7 @@ variable "name" {
   type        = string
 }
 
-variable "ecs_role_arn"  {
+variable "ecs_role_arn" {
   description = "Name of the role arn"
   type        = string
 }
@@ -23,7 +23,7 @@ variable "security_group_ids" {
   type        = list(string)
 }
 
- 
+
 variable "target" {
   description = "target"
   type        = list(string)

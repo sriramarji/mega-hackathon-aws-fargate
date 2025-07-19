@@ -1,9 +1,9 @@
 resource "aws_lb" "main" {
-  name               = "${var.name}-alb"
-  internal           = false
-  load_balancer_type = "application"
-  security_groups   = [var.security_group_id]
-  subnets            = var.subnets
+  name                       = "${var.name}-alb"
+  internal                   = false
+  load_balancer_type         = "application"
+  security_groups            = [var.security_group_id]
+  subnets                    = var.subnets
   enable_deletion_protection = false
 
   enable_cross_zone_load_balancing = true
@@ -15,11 +15,11 @@ resource "aws_lb" "main" {
 
 # Define Target Group 1 (for the first ECS service)
 resource "aws_lb_target_group" "ecs_target_group_1" {
-  name     = "${var.name}-tg1"
-  port     = 3001
-  protocol = "HTTP"
+  name        = "${var.name}-tg1"
+  port        = 3001
+  protocol    = "HTTP"
   target_type = "ip"
-  vpc_id   = var.vpc_id
+  vpc_id      = var.vpc_id
 
   health_check {
     interval            = 30
@@ -35,11 +35,11 @@ resource "aws_lb_target_group" "ecs_target_group_1" {
 
 # Define Target Group 2 (for the second ECS service)
 resource "aws_lb_target_group" "ecs_target_group_2" {
-  name     = "${var.name}-tg2"
-  port     = 3000
-  protocol = "HTTP"
+  name        = "${var.name}-tg2"
+  port        = 3000
+  protocol    = "HTTP"
   target_type = "ip"
-  vpc_id   = var.vpc_id
+  vpc_id      = var.vpc_id
 
   health_check {
     interval            = 30

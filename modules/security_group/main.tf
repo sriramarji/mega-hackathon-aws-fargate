@@ -25,16 +25,16 @@ resource "aws_security_group" "ecs_sg" {
   vpc_id      = var.vpc_id
 
   ingress {
-    from_port   = 3000
-    to_port     = 3000
-    protocol    = "tcp"
+    from_port       = 3000
+    to_port         = 3000
+    protocol        = "tcp"
     security_groups = [aws_security_group.alb_sg.id]
   }
-  
+
   ingress {
-    from_port   = 3001
-    to_port     = 3001
-    protocol    = "tcp"
+    from_port       = 3001
+    to_port         = 3001
+    protocol        = "tcp"
     security_groups = [aws_security_group.alb_sg.id]
   }
 
