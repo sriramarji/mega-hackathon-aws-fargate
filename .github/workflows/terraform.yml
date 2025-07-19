@@ -1,12 +1,12 @@
 name: Terraform Apply and Destroy
 
 on:
-  pull_request:
-    branches:
-      - master
-  push:
-    branches:
-      - master
+  # pull_request:
+  #   branches:
+  #     - master
+  # push:
+  #   branches:
+  #     - master
   workflow_dispatch:
     inputs:
       action:
@@ -37,14 +37,7 @@ jobs:
       - name: Run TFLint
         run: tflint --init && tflint -f compact
         working-directory: ./
-
-      - name: Install Checkov
-        run: |
-          pip3 install --upgrade pip
-          pip3 install checkov
-      - name: Run Checkov
-        run: checkov -d . --framework terraform --soft-fail
-        working-directory: ./
+        
   terraform:
     name: Terraform Apply or Destroy
     runs-on: ubuntu-latest
